@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RecyclerView Sample</string>
+    <string name="error_header">Произошла ошибка</string>
+</resources>
