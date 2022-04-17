@@ -10,12 +10,14 @@ class ImagesDiffUtilCallback : DiffUtil.ItemCallback<ImageItem>() {
      * у элемента разное.
      */
     override fun areItemsTheSame(oldItem: ImageItem, newItem: ImageItem): Boolean =
-        oldItem.index == newItem.index
+        oldItem.name == newItem.name
 
     /**
      * Метод должен вернуть true, если у двух элементов одинаковое содержимое.
      * Даже если их номера разные. Т.е. сверка по содержимому.
      */
     override fun areContentsTheSame(oldItem: ImageItem, newItem: ImageItem): Boolean =
-        oldItem.name == newItem.name
+        oldItem.name == newItem.name &&
+        oldItem.image.hashCode() == newItem.image.hashCode() &&
+        oldItem.info == newItem.info
 }
